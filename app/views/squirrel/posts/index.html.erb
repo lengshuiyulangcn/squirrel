@@ -1,0 +1,26 @@
+<ul class="breadcrumb">
+  <li><%=link_to "首页", '#'%></li>
+ </ul>
+<div class="topicbox">
+<center>最近投稿</center>
+<%@posts.each do |post|%>
+  <div class="topics">
+    <div class="topic topic_line">
+      <div class="pull-left avatar">
+	头像
+      </div>
+         <div class="title"><%=link_to post.title, post_path(post.id)%>
+	    <%=link_to "10", post_path(post.id), :class=>"badge pull-right",'data-no-turbolink' => true%>
+	 </div>
+	 <div class="otherinfo">
+    	    投稿人: Gyorou
+            最后更新：<%=time_ago_in_words(post.updated_at)%>
+	    标签: fuckyou
+	 </div>
+      </div>
+  </div>
+<%end%>
+    <div class="flickr_pagination">
+	paginate
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="container">
+  <%= form_for @post  do |f| %>
+    <%= f.label "标题", :class=>"label label-info"%>
+    <%= f.text_field :title, :class=>"title", :class=>"form-control"%>
+    <%= f.label "内容", :class=>"label label-info"%>
+    <%= f.kindeditor :content, :autofocus => true, :class=>"form-control" ,:rows=>"10" %>
+    <%= f.submit "创建", :class=>"btn btn-info"%>
+  <% end %>
+</div>
