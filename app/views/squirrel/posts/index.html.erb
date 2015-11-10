@@ -13,7 +13,7 @@
 	    <%=link_to "10", post_path(post.id), :class=>"badge pull-right",'data-no-turbolink' => true%>
 	 </div>
 	 <div class="otherinfo">
-    	    投稿人: Gyorou
+           投稿人: <%= post.author.email %> 
             最后更新：<%=time_ago_in_words(post.updated_at)%>
 	    标签: fuckyou
 	 </div>

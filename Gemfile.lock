@@ -3,6 +3,7 @@ PATH
   specs:
     squirrel (0.0.1)
       rails (~> 4.2.4)
+      rails_kindeditor
 
 GEM
   remote: https://rubygems.org/
