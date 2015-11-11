@@ -8,6 +8,7 @@ module Squirrel
     end
     def new 
       @post = Post.new
+      @sections_with_ids = Section.all.map{|section| [section.name, section.id]}
     end
     def create
       @post = Post.new
@@ -25,7 +26,7 @@ module Squirrel
     end
     private
     def post_params
-      params.require(:post).permit(:id,:title,:content)
+      params.require(:post).permit(:id,:title,:content,:section_id)
     end
   end
 end

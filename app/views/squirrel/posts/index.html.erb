@@ -14,8 +14,8 @@
 	 </div>
 	 <div class="otherinfo">
            投稿人: <%= post.author.user_name %> 
-            最后更新：<%=time_ago_in_words(post.updated_at)%>
-	    标签: fuckyou
+           最后更新：<%=time_ago_in_words(post.updated_at)%>
+           节点: <%= post.section.name  if post.section %>
 	 </div>
       </div>
   </div>
