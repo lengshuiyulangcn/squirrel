@@ -8,7 +8,7 @@
           <div class="info">
             <%=comment.commenter.user_name%>  
             <%= time_ago_in_words(comment.created_at) %>
-            <a href="#comment" > 快速回复</a>
+            <a href="#comment" onclick="add_reply(<%=comment.id%>);" > 快速回复</a>
             <%=link_to "编辑",edit_comment_path(comment.id) if current_user == comment.commenter %>
           </div>
           <div class="body"><%=comment.content.html_safe%></div>
@@ -18,7 +18,11 @@
   </div>
 </div>
 <script>
-  
+function add_reply(id){
+  $("<input type='hidden' value="+id+" />")
+   .attr("name", "comment_id")
+   .appendTo("#comment_from");
+}
 </script>
 <br>
 <br>

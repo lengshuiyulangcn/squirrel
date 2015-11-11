@@ -1,26 +1,5 @@
 <ul class="breadcrumb">
-  <li><%=link_to "首页", '#'%></li>
+  <li><%="首页"%></li>
  </ul>
-<div class="topicbox">
 <center>最近投稿</center>
-<%@posts.each do |post|%>
-  <div class="topics">
-    <div class="topic topic_line">
-      <div class="pull-left avatar">
-        <%=image_tag(post.author.user_image)%>	
-      </div>
-         <div class="title"><%=link_to post.title, post_path(post.id)%>
-	    <%=link_to post.comments.length, post_path(post.id), :class=>"badge pull-right",'data-no-turbolink' => true%>
-	 </div>
-	 <div class="otherinfo">
-           投稿人: <%= post.author.user_name %> 
-           最后更新：<%=time_ago_in_words(post.updated_at)%>
-           节点: <%= post.section.name  if post.section %>
-	 </div>
-      </div>
-  </div>
-<%end%>
-    <div class="flickr_pagination">
-	paginate
-    </div>
-</div>
+<%= render partial:  'squirrel/common/posts_list', locals: {posts: @posts}%>

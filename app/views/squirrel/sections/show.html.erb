@@ -1,0 +1,7 @@
+<ul class="breadcrumb">
+  <li><%=link_to "首页", posts_path %></li>
+  <li><%= @section.name %></li>
+</ul>
+<center>话题节点: <%= @section.name %> </center>
+<%= render partial:  'squirrel/common/posts_list', locals: {posts: @posts}%>
+

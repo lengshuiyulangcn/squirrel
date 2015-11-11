@@ -1,6 +1,6 @@
 <ul class="breadcrumb">
   <li><%=link_to "首页", '/'%></li>
-  <li><%=link_to "论坛", posts_path%></li>
+  <li><%=link_to @post.section.name, section_path(@post.section.id) %></li>
   <li><%= @post.title %></li>
 </ul> 
 <div class="topic-detail panel panel-default">
