@@ -1,1 +1,20 @@
+<ul class="breadcrumb">
+  <li><%=link_to "首页", '/'%></li>
+  <li><%=link_to "论坛", posts_path%></li>
+  <li><%= @post.title %></li>
+</ul> 
+<div class="topic-detail panel panel-default">
+  <div class="panel-heading media clearfix">
+    <div class="media-body">
+      <h1><%= @post.title %></h1>
+      <div class="info">
+        由<%= @post.author.user_name%>创建于<%=time_ago_in_words(@post.created_at) %>
+      </div>
+    </div>
+    <div class="avatar media-right"><%= image_tag(@post.author.user_image) %></div>
+  </div>
+  <div class="panel-body"><%=@post.content.html_safe%></div>
+</div>
+<%= render partial: 'squirrel/common/comment_panel', locals:{post: @post} %>
+<%= render partial: 'squirrel/common/comment_input', locals:{post: @post, comment: @comment } %>
 

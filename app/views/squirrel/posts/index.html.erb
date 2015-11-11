@@ -7,13 +7,13 @@
   <div class="topics">
     <div class="topic topic_line">
       <div class="pull-left avatar">
-	头像
+        <%=image_tag(post.author.user_image)%>	
       </div>
          <div class="title"><%=link_to post.title, post_path(post.id)%>
-	    <%=link_to "10", post_path(post.id), :class=>"badge pull-right",'data-no-turbolink' => true%>
+	    <%=link_to post.comments.length, post_path(post.id), :class=>"badge pull-right",'data-no-turbolink' => true%>
 	 </div>
 	 <div class="otherinfo">
-           投稿人: <%= post.author.email %> 
+           投稿人: <%= post.author.user_name %> 
             最后更新：<%=time_ago_in_words(post.updated_at)%>
 	    标签: fuckyou
 	 </div>

@@ -20,6 +20,8 @@ module Squirrel
       end
     end
     def show
+      @post = Post.find(params.permit(:id)[:id])
+      @comment = Comment.new
     end
     private
     def post_params
