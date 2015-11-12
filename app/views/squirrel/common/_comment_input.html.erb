@@ -1,10 +1,19 @@
 <div class="comment_input">
   <div class="label label-info">发表讨论</div>
   <div id="comment">
-    <%= form_for comment, id: "comment_from" do |f| %>
+    <%= form_for comment do |f| %>
       <%= f.kindeditor :content, :simple_mode => true,:editor_id=>'comment_editor' %>
       <%= f.hidden_field :post_id, :value=>post.id%>
       <%=f.submit "发送", :class=>"btn btn-info"%>
   <%end%>
   </div>
 </div>
+<script>
+function add_reply(id,floor,commenter){
+  $("<input type='hidden' value="+id+" />")
+   .attr("name", "comment[replier_id]")
+   .prependTo("#new_comment");
+  comment_editor.appendHtml("<p>回复"+floor+"楼@"+commenter+"</p>");
+}
+</script>
+
