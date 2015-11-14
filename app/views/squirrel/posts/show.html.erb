@@ -8,7 +8,7 @@
     <div class="media-body">
       <h1><%= @post.title %></h1>
       <div class="info">
-        由<%= @post.author.user_name%>创建于<%=time_ago_in_words(@post.created_at) %>
+      <%= @post.author.user_name%>创建于<%=time_ago_in_words(@post.created_at) %>
       <%=link_to '编辑', edit_post_path(@post.id) if current_user == @post.author %>
       </div>
     </div>

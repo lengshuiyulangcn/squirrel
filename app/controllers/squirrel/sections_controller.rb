@@ -5,6 +5,7 @@ module Squirrel
     def show
       @section = Section.find(params.permit(:id)[:id])
       @posts = @section.posts
+      @sections = Section.all
     end
   end
 end

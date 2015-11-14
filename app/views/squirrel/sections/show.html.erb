@@ -4,4 +4,5 @@
 </ul>
 <center>话题节点: <%= @section.name %> </center>
 <%= render partial:  'squirrel/common/posts_list', locals: {posts: @posts}%>
+<%= render partial:  'squirrel/common/section_list', locals:{sections: @sections}%>
 

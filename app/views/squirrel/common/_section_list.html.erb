@@ -1,0 +1,8 @@
+<div class='panel panel-default'>
+  <div class="panel-heading">Node Navigation</div>
+  <div class="panel-body">
+    <% sections.each do  |section| %>
+      <%= link_to section.name, section_path(section.id) %>
+    <% end %>
+  </div>
+</div>
