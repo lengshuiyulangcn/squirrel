@@ -1,6 +1,8 @@
 <ul class="breadcrumb">
   <li><%="首页"%></li>
- </ul>
-<center>最近投稿</center>
+<%=link_to "新建", new_post_path, class: "pull-right"%>
+</ul>
+<center>最近投稿
+</center>
 <%= render partial:  'squirrel/common/posts_list', locals: {posts: @posts}%>
 <%= render partial:  'squirrel/common/section_list', locals:{sections: @sections}%>

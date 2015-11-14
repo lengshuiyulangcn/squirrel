@@ -3,5 +3,6 @@ module Squirrel
     belongs_to :author, class_name: User, foreign_key: :author_id  
     belongs_to :section, class_name: Squirrel::Section, foreign_key: :section_id 
     has_many :comments, dependent: :destroy
+    self.per_page = 10
   end
 end

@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", "~> 4.2.4"
   s.add_dependency "rails_kindeditor"
+  s.add_dependency "will_paginate"
 
   s.add_development_dependency "sqlite3"
 end

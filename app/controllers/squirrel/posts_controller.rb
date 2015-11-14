@@ -4,8 +4,9 @@ module Squirrel
   class PostsController < ApplicationController
     before_action :authenticate_user!, except: [:index, :show]
     def index
-      @posts = Post.all
+      @posts = Post.all.page(params.permit(:page)[:page]).order('created_at DESC')
       @sections = Section.all
+      @new_section = Section.new
     end
     def new 
       @post = Post.new
@@ -42,6 +43,11 @@ module Squirrel
     def show
       @post = Post.find(params.permit(:id)[:id])
       @comment = Comment.new
+    end
+    def destroy
+       post = Post.destroy_all(id: params.permit(:id)[:id])
+       flash[:success]='删除成功'
+       redirect_to posts_path 
     end
     private
     def post_params

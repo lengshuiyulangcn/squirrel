@@ -4,6 +4,7 @@ PATH
     squirrel (0.0.1)
       rails (~> 4.2.4)
       rails_kindeditor
+      will_paginate
 
 GEM
   remote: https://rubygems.org/
@@ -107,6 +108,7 @@ GEM
     thread_safe (0.3.5)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    will_paginate (3.0.7)
 
 PLATFORMS
   ruby
@@ -115,3 +117,4 @@ DEPENDENCIES
   rails_kindeditor
   sqlite3
   squirrel!
+  will_paginate

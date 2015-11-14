@@ -10,6 +10,7 @@
       <div class="info">
       <%= @post.author.user_name%>创建于<%=time_ago_in_words(@post.created_at) %>
       <%=link_to '编辑', edit_post_path(@post.id) if current_user == @post.author %>
+      <%=link_to '删除', post_path(@post.id), method: :delete if current_user && current_user.is_admin %>
       </div>
     </div>
     <div class="avatar media-right"><%= image_tag(@post.author.user_image) %></div>
