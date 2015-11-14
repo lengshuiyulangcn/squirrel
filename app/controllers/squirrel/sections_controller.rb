@@ -1,7 +1,7 @@
 require_dependency "squirrel/application_controller"
 
 module Squirrel
-  class SectionsController < ApplicationController
+  class SectionsController < Squirrel::ApplicationController
     def show
       @section = Section.find(params.permit(:id)[:id])
       @posts = @section.posts.page(params[:page]).order('created_at DESC')

@@ -1,4 +1,2 @@
-module Squirrel
-  class ApplicationController < ActionController::Base
+  class Squirrel::ApplicationController < ::ApplicationController
   end
-end

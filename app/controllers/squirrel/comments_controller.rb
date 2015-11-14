@@ -1,7 +1,7 @@
 require_dependency "squirrel/application_controller"
 
 module Squirrel
-  class CommentsController < ApplicationController
+  class CommentsController < Squirrel::ApplicationController
     before_action :authenticate_user!, except: [:index, :show]
     def index
     end

@@ -1,7 +1,7 @@
 require_dependency "squirrel/application_controller"
 
 module Squirrel
-  class PostsController < ApplicationController
+  class PostsController < Squirrel::ApplicationController
     before_action :authenticate_user!, except: [:index, :show]
     def index
       @posts = Post.all.page(params.permit(:page)[:page]).order('created_at DESC')
