@@ -30,6 +30,10 @@ User#user_name
 User#is_admin
 ```
 
+7. Launch your application and get access to '/bbs'
+
+Done!
+
 ### Other
 The default use bootstrap 
 
